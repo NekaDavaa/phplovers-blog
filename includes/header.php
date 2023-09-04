@@ -17,15 +17,20 @@
 
   <body>
 
-    <div class="blog-masthead">
-      <div class="container">
+   <?php
+    $current_page = basename($_SERVER['PHP_SELF']);
+    ?>
+
+<div class="blog-masthead">
+    <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="index.php">Home</a>
-          <a class="blog-nav-item" href="posts.php">All Posts</a>
-          <a class="blog-nav-item pull-right" href="/phplovers-blog/admin">Be Admin</a>
+            <a class="blog-nav-item <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>" href="index.php">Home</a>
+            <a class="blog-nav-item <?php echo ($current_page == 'posts.php') ? 'active' : ''; ?>" href="posts.php">All Posts</a>
+            <a class="blog-nav-item pull-right" href="/phplovers-blog/admin">Be Admin</a>
         </nav>
-      </div>
     </div>
+</div>
+
 
     <div class="container">
 

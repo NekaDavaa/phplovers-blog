@@ -16,16 +16,19 @@
 
   <body>
 
-    <div class="blog-masthead">
-      <div class="container">
+   <?php $current_page = basename($_SERVER['PHP_SELF']); ?>
+
+<div class="blog-masthead">
+    <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="index.php">Dashboard</a>
-          <a class="blog-nav-item" href="add_post.php">Add Post</a>
-		  <a class="blog-nav-item" href="add_category.php">Add Category</a>
-		  <a class="blog-nav-item pull-right" href="/phplovers-blog">Visit Blog</a>
+            <a class="blog-nav-item <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>" href="index.php">Dashboard</a>
+            <a class="blog-nav-item <?php echo ($current_page == 'add_post.php') ? 'active' : ''; ?>" href="add_post.php">Add Post</a>
+            <a class="blog-nav-item <?php echo ($current_page == 'add_category.php') ? 'active' : ''; ?>" href="add_category.php">Add Category</a>
+            <a class="blog-nav-item pull-right" href="/phplovers-blog">Visit Blog</a>
         </nav>
-      </div>
     </div>
+</div>
+
 
     <div class="container">
 
