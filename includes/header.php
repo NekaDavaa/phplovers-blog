@@ -22,6 +22,7 @@
         <nav class="blog-nav">
           <a class="blog-nav-item active" href="index.php">Home</a>
           <a class="blog-nav-item" href="posts.php">All Posts</a>
+          <a class="blog-nav-item pull-right" href="/phplovers-blog/admin">Be Admin</a>
         </nav>
       </div>
     </div>
