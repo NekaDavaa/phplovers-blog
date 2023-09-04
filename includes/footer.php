@@ -16,8 +16,10 @@
             <h4>Categories</h4>
             <ol class="list-unstyled caregory-styles">
               <?php foreach ($categories as $category) : ?>
-              <li><a href="#"><?php echo $category['name']; ?></a></li>
+              <li><a href="posts.php?category=<?php echo $category['id']; ?>"><?php echo $category['name']; ?></a></li>
             <?php endforeach ?>
+                  <?php   if (basename($_SERVER['PHP_SELF']) == "posts.php") {
+                      echo '<a href="posts.php">Reset filter</a>'; } ?>
             </ol>
           </div>
         </div><!-- /.blog-sidebar -->

@@ -3,7 +3,7 @@
 	//Create DB Object
 	$db = new Database();
   //Query 
-  $query = "SELECT * FROM POSTS"; 
+  $query = "SELECT * FROM POSTS order by date desc"; 
   //Run query
   $posts = $db->select($query);
 
