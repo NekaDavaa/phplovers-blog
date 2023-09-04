@@ -3,7 +3,7 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+            <?php echo $about_site; ?>
           </div>
           <div class="sidebar-module">
             
@@ -14,7 +14,7 @@
                  ?>
                
             <h4>Categories</h4>
-            <ol class="list-unstyled">
+            <ol class="list-unstyled caregory-styles">
               <?php foreach ($categories as $category) : ?>
               <li><a href="#"><?php echo $category['name']; ?></a></li>
             <?php endforeach ?>
