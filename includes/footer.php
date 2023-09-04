@@ -6,12 +6,18 @@
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
           </div>
           <div class="sidebar-module">
+            
+                 <?php 
+                   $db = new Database();
+                   $query = "select * from categories";
+                   $categories = $db->select($query);
+                 ?>
+               
             <h4>Categories</h4>
             <ol class="list-unstyled">
-              <li><a href="#">News</a></li>
-              <li><a href="#">Events</a></li>
-              <li><a href="#">Tutorials</a></li>
-              <li><a href="#">Misc</a></li>
+              <?php foreach ($categories as $category) : ?>
+              <li><a href="#"><?php echo $category['name']; ?></a></li>
+            <?php endforeach ?>
             </ol>
           </div>
         </div><!-- /.blog-sidebar -->
