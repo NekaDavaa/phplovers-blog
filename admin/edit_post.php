@@ -1,6 +1,4 @@
 <?php include 'includes/header.php'; ?>
-
-
 <?php 
 $current_post = $_GET['id'];
 $db = new Database();
@@ -8,8 +6,6 @@ $query = "select * from posts where id = $current_post";
 $posts = $db->select($query);
 $posts = mysqli_fetch_assoc($posts);
 ?>
-
-
 <form role="form" method="post" action="edit_post.php">
   <div class="form-group">
     <label>Post Title</label>
@@ -22,9 +18,24 @@ $posts = mysqli_fetch_assoc($posts);
   <div class="form-group">
     <label>Category</label>
     <select name="category" class="form-control">
-		<option>News</option>
-		<option>Events</option>
-	</select>
+  <?php 
+      $current_cat = $posts['category'];     
+      $db = new Database();
+      $query = "select * from categories";
+      $categories = $db->select($query);
+      $selected = "";
+       while($row = $categories->fetch_assoc()) : ?>
+      <?php 
+        if ($current_cat === $row['id']) {
+             $selected = "selected";
+        }
+          else {
+               $selected = "";
+          }
+      ?>
+      <option <?php echo $selected; ?>><?php echo $row['name'];?></option>
+       <?php endwhile ?>
+  </select>
   </div>
   <div class="form-group">
     <label>Author</label>
