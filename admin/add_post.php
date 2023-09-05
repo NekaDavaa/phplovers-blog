@@ -1,13 +1,9 @@
 <?php include 'includes/header.php'; ?>
-
 <?php 
-
   $db = new Database();
   $query = "select * from categories";
   $categories = $db->select($query);
-
 ?>
-
 <form role="form" method="post" action="add_post.php">
   <div class="form-group">
     <label>Post Title</label>

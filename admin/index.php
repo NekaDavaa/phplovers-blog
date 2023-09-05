@@ -1,5 +1,4 @@
 <?php include 'includes/header.php'; ?>
-
 <table class="table table-striped">
 	<tr>
 		<th>Post ID#</th>
@@ -8,7 +7,6 @@
 		<th>Author</th>
 		<th>Date</th>
 	</tr>
-	
 <?php 
 $db = new Database();
 $query = "select p.*, c.name from posts as p inner join categories as c on p.category = c.id";
