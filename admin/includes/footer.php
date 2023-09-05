@@ -4,7 +4,7 @@
     </div><!-- /.container -->
 
     <div class="blog-footer">
-      <p>PHPLoversBlog &copy; 2014</p>
+     <p>PHPLoversBlog &copy; <?php echo date('Y'); ?></p>
         <a href="https://github.com/NekaDavaa/phplovers-blog" target="_blank">Click on the link to overview the project code...</a>
       <p>
         <a href="#">Back to top</a>

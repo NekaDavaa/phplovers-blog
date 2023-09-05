@@ -86,3 +86,5 @@ class Database{
 	   }
 	 
 }
+
+$mysqli = new mysqli("localhost", "root", "", "blog");
