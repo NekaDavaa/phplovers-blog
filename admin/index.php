@@ -8,6 +8,7 @@
 		<th>Date</th>
 	</tr>
 <?php 
+//Change styles
 $db = new Database();
 $query = "select p.*, c.name from posts as p inner join categories as c on p.category = c.id";
 $posts = $db->select($query);
