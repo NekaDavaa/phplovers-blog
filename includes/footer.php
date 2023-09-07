@@ -3,7 +3,13 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
-            <?php echo $about_site; ?>
+            <?php 
+               $db = new Database();
+               $query = "select * from options";
+              $about_text = $db->select($query);
+              $result = mysqli_fetch_assoc($about_text);
+              echo $result['text'];
+             ?>
           </div>
           <div class="sidebar-module">
             

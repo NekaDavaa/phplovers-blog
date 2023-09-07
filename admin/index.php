@@ -43,14 +43,33 @@ $categories = $db->select($query);
 <hr>
 <h3>About the site</h3>
 <?php 
-if (isset($_POST['submit'])){
-
-echo "submit";
-}
+$db = new Database();
+$query = "select * from options";
+$about_text = $db->select($query);
+$result = mysqli_fetch_assoc($about_text);
 ?>
+
+
+
+
+
+
 <form role="form" method="post" action="index.php">
-<textarea style="width:100%;">asd</textarea>
+<textarea name="content" style="width:100%; height: 200px;"><?php echo $result['text']; ?></textarea>
 <input name="submit" type="submit" class="btn btn-default" value="Change" />
+
+<?php 
+if (isset($_POST['submit'])){
+$content = isset($_POST['content']) ? $_POST['content'] : '';
+$query = "UPDATE options SET `text`='$content'";
+$update_row = $mysqli->query($query) or die;
+if ($update_row) {
+    echo '<meta http-equiv="refresh" content="0;url=http://localhost/phplovers-blog/admin/index.php">'; 
+}
+}
+
+
+?>
 </form>
 <br />
 
