@@ -10,7 +10,7 @@
 <?php 
 //Change styles
 $db = new Database();
-$query = "select p.*, c.name from posts as p inner join categories as c on p.category = c.id";
+$query = "select p.*, c.name from posts as p inner join categories as c on p.category = c.id order by date desc";
 $posts = $db->select($query);
 ?>
  <?php while ($row = $posts->fetch_assoc()) : ?>
@@ -25,7 +25,7 @@ $posts = $db->select($query);
 </table>
 <?php 
 $db = new Database();
-$query = "select * from categories";
+$query = "select * from categories order by id desc";
 $categories = $db->select($query);
 ?>
 <table class="table table-striped">

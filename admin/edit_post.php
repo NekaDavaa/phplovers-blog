@@ -6,7 +6,30 @@ $query = "select * from posts where id = $current_post";
 $posts = $db->select($query);
 $posts = mysqli_fetch_assoc($posts);
 ?>
-<form role="form" method="post" action="edit_post.php">
+
+<?php 
+if (isset($_POST['submit'])) {
+
+$post_title = $_POST['title'];
+$post_body = $_POST['body'];
+$post_cat = $_POST['category'];
+$post_author = $_POST['author'];
+$post_tags = $_POST['tags'];
+$db = new Database();
+$query = "select * from categories where name = '$post_cat'";
+$new_post_cat = $db->select($query);
+$row = $new_post_cat->fetch_assoc();
+$new_post_cat = $row['id'];
+$query = "UPDATE posts SET category='$new_post_cat', title='$post_title', body='$post_body', author='$post_author', tags='$post_tags' WHERE id='$current_post'";
+$update_row = $mysqli->query($query) or die;
+if ($update_row) {
+    echo '<p class="post-added" style="color:#0cc50c;background: #555050;padding: 5px;display: inline;font-size: 26px;">Post updated succesfully</p>'; }
+}
+
+?>
+
+
+<form role="form" method="post" action="edit_post.php?id=<?php echo $current_post ?>">
   <div class="form-group">
     <label>Post Title</label>
     <input name="title" type="text" class="form-control" placeholder="Enter Title" value="<?php echo $posts['title'];?>" />
