@@ -17,6 +17,16 @@ if ($update_row) {
     echo '<p class="post-added" style="color:#0cc50c;background: #555050;padding: 5px;display: inline;font-size: 26px;">Category name updated</p>'; }
 }
 ?>
+<?php   
+if (isset($_POST['delete'])) {
+
+$query = "delete from categories where id ='$current_cat'";
+$delete_row = $mysqli->query($query) or die;
+if ($delete_row) {
+    echo '<p class="post-added" style="color:#0cc50c;background: #555050;padding: 5px;display: inline;font-size: 26px;">Category deleted succesfully</p>'; 
+    echo '<meta http-equiv="refresh" content="1;url=http://localhost/phplovers-blog/admin/index.php">'; }
+}
+?>
 <form role="form" method="post" action="edit_category.php?id=<?php echo $current_cat ?>">
   <div class="form-group">
     <label>Category Name</label>

@@ -20,7 +20,7 @@ $post = mysqli_fetch_assoc($post);
 ?>
 <div class="blog-post">
             <h2 class="blog-post-title"><?php echo $post['title'];?></h2>
-            <p class="blog-post-meta"><?php echo FormatDate($post['date']);?> by <a href="#"><?php echo $post['author'];?></a></p>
+            <p class="blog-post-meta"><?php echo FormatDate($post['date']);?> by <a href="author.php"><?php echo $post['author'];?></a></p>
 				<?php echo "<p>". $post['body'] ."</p>"; ?>
           </div><!-- /.blog-post -->		      
 <?php include 'includes/footer.php'; ?>

@@ -40,5 +40,19 @@ $categories = $db->select($query);
 	</tr>
  	 <?php endwhile; ?>
 </table>
+<hr>
+<h3>About the site</h3>
+<?php 
+if (isset($_POST['submit'])){
+
+echo "submit";
+}
+?>
+<form role="form" method="post" action="index.php">
+<textarea style="width:100%;">asd</textarea>
+<input name="submit" type="submit" class="btn btn-default" value="Change" />
+</form>
+<br />
+
 <?php include 'includes/footer.php'; ?>	
 	     

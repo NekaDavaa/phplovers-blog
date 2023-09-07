@@ -6,6 +6,7 @@ $query = "INSERT INTO categories (`name`) VALUES ('$entered_category')";
 $insert_row = $mysqli->query($query) or die;
 if ($insert_row) {
     echo '<p class="post-added" style="color:#0cc50c;background: #555050;padding: 5px;display: inline;font-size: 26px;">Category added</p>';
+    echo '<meta http-equiv="refresh" content="1;url=http://localhost/phplovers-blog/admin/index.php">';
 }
 if (empty($_POST['cat-name'])) {
         header("Location:add_category.php?error=Please+fill+category+name");

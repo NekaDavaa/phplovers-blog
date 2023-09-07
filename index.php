@@ -12,7 +12,7 @@
 <?php while ($row = mysqli_fetch_assoc($posts)) : ?>
 <div class="blog-post">
             <h2 class="blog-post-title"><?php echo $row['title'];?></h2>
-            <p class="blog-post-meta"><?php echo FormatDate($row['date']) ;?> by <a href="#"><?php echo $row['author']; ?></a></p>
+            <p class="blog-post-meta"><?php echo FormatDate($row['date']) ;?> by <a href="author.php"><?php echo $row['author']; ?></a></p>
 				<p><?php echo FormatText($row['body']);?></p>
            <a class="readmore" href="post.php?id=<?php echo urlencode($row['id']);?>">Read More</a>
           </div><!-- /.blog-post -->

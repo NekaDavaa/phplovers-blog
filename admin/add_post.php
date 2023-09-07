@@ -22,7 +22,8 @@ $new_post_cat = $row['id'];
 $query = "INSERT INTO posts (category, title, body, author, tags) VALUES ('$new_post_cat', '$post_title', '$post_body', '$post_author', '$post_tags')";
 $insert_row = $mysqli->query($query) or die;
 if ($insert_row) {
-    echo '<p class="post-added" style="color:#0cc50c;background: #555050;padding: 5px;display: inline;font-size: 26px;">Post added</p>'; }
+    echo '<p class="post-added" style="color:#0cc50c;background: #555050;padding: 5px;display: inline;font-size: 26px;">Post added</p>';
+    echo '<meta http-equiv="refresh" content="1;url=http://localhost/phplovers-blog/admin/index.php">'; }
 }
 ?>
 <?php
