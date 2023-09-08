@@ -1,7 +1,7 @@
 <?php include 'includes/header.php'; ?>
 <table class="table table-striped">
 	<tr>
-		<th>Post ID#</th>
+		<th>Post ID#asd</th>
 		<th>Post Title</th>
 		<th>Category</th>
 		<th>Author</th>
