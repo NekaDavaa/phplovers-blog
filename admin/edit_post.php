@@ -6,10 +6,8 @@ $query = "select * from posts where id = $current_post";
 $posts = $db->select($query);
 $posts = mysqli_fetch_assoc($posts);
 ?>
-
 <?php 
 if (isset($_POST['submit'])) {
-
 $post_title = $_POST['title'];
 $post_body = $_POST['body'];
 $post_cat = $_POST['category'];
@@ -22,35 +20,17 @@ $row = $new_post_cat->fetch_assoc();
 $new_post_cat = $row['id'];
 $query = "UPDATE posts SET category='$new_post_cat', title='$post_title', body='$post_body', author='$post_author', tags='$post_tags' WHERE id='$current_post'";
 $update_row = $mysqli->query($query) or die;
-
 }
-
 ?>
-
-
-
 <?php   
 if (isset($_POST['delete'])) {
-
 $query = "delete from posts where id ='$current_post'";
 $delete_row = $mysqli->query($query) or die;
 if ($delete_row) {
     echo '<p class="post-added" style="color:#0cc50c;background: #555050;padding: 5px;display: inline;font-size: 26px;">Post deleted succesfully</p>'; 
     echo '<meta http-equiv="refresh" content="1;url=http://localhost/phplovers-blog/admin/index.php">'; }
 }
-
-
-
-
-
-
-
 ?>
-
-
-
-
-
 <form role="form" method="post" action="edit_post.php?id=<?php echo $current_post ?>">
   <div class="form-group">
     <label>Post Title</label>
